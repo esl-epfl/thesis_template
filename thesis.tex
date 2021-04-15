@@ -14,11 +14,24 @@
 % Options: MScThesis, BScThesis, MScProject, BScProject
 \usepackage[MScThesis,lablogo]{EPFLreport}
 \usepackage{xspace}
+% Bibliography settings
+\usepackage[
+  backend=biber,
+  style=numeric-comp,
+  hyperref=true,
+  %style=numeric,
+  %sorting=ydnt,
+  defernumbers=true,
+  maxbibnames=99,
+]{biblatex}
+\addbibresource{thesis.bib}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 \title{A wonderful thesis\\about the merits of scientific writing}
 \author{The Student}
 \supervisor{The Doctoral Student}
-\adviser{Prof. Dr. sc. ETH Mathias Payer}
+\adviser{Prof. David Atienza}
 %\coadviser{Second Adviser}
 \expert{The External Reviewer}
 
