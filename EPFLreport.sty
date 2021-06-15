@@ -37,6 +37,9 @@
 \newif\if@lablogo
 \DeclareOption{lablogo}{\@lablogotrue}
 
+\newif\if@epflcondensed
+\DeclareOption{condensed}{\@epflcondensedtrue}
+
 \ProcessOptions\relax
 
 \newcommand{\projectterm}{Project Report}
@@ -206,5 +209,15 @@ and show them with \texttt{\textbackslash{}makeacks}.
 \tableofcontents
 \setlength{\parskip}{1em}
 }
+
+\if@epflcondensed
+  \usepackage{etoolbox}
+  \makeatletter
+  \patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+  \makeatother
+  \usepackage{titlesec}
+  \titleformat{\chapter}[hang] 
+  {\normalfont\huge\bfseries}{\thechapter:}{0.5em}{}
+\fi
 
 \endinput
